@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HomeView v-if="view=='HomeView'" :cards="cards" @changeView="view='AddCard'" />
+    <HomeView v-if="view=='HomeView'" :cards="cards" @changeView="view='AddCard'"  />
     <AddCard v-if="view=='AddCard'" :cards="cards" @sendMore="pushNewCard"/>
   </div>
 </template>
@@ -30,14 +30,30 @@ export default {
       expireYear: "23", 
       CCV: '666'
       },
-      // {
-      // vendor: "Bitcoin", 
-      // cardNumber: "1234 5678 9012 3156", 
-      // cardHolder: "Kent Aurén", 
-      // expireMonth: "3", 
-      // expireYear: "23", 
-      // CCV: '666'
-      // }
+      {
+      vendor: "blockchain", 
+      cardNumber: "1234 5678 9012 3156", 
+      cardHolder: "Kent Aurén", 
+      expireMonth: "3", 
+      expireYear: "23", 
+      CCV: '666'
+      },
+      {
+      vendor: "evil", 
+      cardNumber: "1337 1337 1337 1337", 
+      cardHolder: "OSCAR ARRHENIUS", 
+      expireMonth: "13", 
+      expireYear: "37", 
+      CCV: '666'
+      },
+      {
+      vendor: "ninja", 
+      cardNumber: "1338 1337 1337 1337", 
+      cardHolder: "OSCAR ARRHENIUS", 
+      expireMonth: "13", 
+      expireYear: "37", 
+      CCV: '666'
+      }
     ]
   }}
 }
@@ -47,6 +63,8 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Source+Sans+Pro:wght@400;700&display=swap');
 
+
+
 #app{
   padding: .5rem;
 }
@@ -55,9 +73,8 @@ h1 {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-p, span {
+p {
   font-family: 'PT Mono', monospace;
-
 }
 
 </style>

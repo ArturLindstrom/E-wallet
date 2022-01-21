@@ -1,8 +1,9 @@
 <template>
-  <div class="card" :class="classGenerator">
+  <div class="card" :class="classGenerator" >
     <div class="wifichip">
       <img class="wifi" v-if="classGenerator == '' || classGenerator == 'bitcoin'" src="../assets/wifi.svg">
-      <img class="wifi" v-else src="../assets/wifi_white.svg">
+      <img class="wifi-white" v-else src="../assets/wifi_white.svg">
+      <!-- <img class="wifi" v-bind:src="this.wifiSrc"> -->
       <div class="chipcontainer">
         <img class="chip" src="../assets/chip.svg">
       </div>
@@ -26,6 +27,13 @@ export default {
   computed: {
     newCard(){
       return this.card
+    },
+    wifiSrc() {
+      if(this.newCard.vendor == "" || this.classGenerator == 'bitcoin'){
+        return require("../assets/wifi.svg")
+        } else {
+        return require("../assets/wifi_white.svg")
+      }
     },
     imgSrc() {
       return require("../assets/" + (this.card.vendor) + ".svg")
@@ -55,7 +63,7 @@ p{
   height: 12rem;
   aspect-ratio: 3.5/2;
   border-radius: 8px;
-  background-color: #E5E5E5;
+  background-color: darkgray;
   grid-template-areas: 
   "wifichip . . vendor-img"
   "card-number card-number card-number card-number "
@@ -78,7 +86,6 @@ p{
   text-align: center;
   margin: 0;
   align-self: center;
-  justify-self: flex-start;
 }
 
 .card-holder{
@@ -111,12 +118,20 @@ p{
   justify-self: flex-start;
 }
 
-.wifi, .chip {
+.wifi, .chip, .wifi-white {
   height: 2rem;
 }
 
+.chip {
+  width: 3rem;
+}
+
+.wifi {
+  opacity: 0.5;
+}
+
 .chipcontainer {
-  background: goldenrod;
+  background: #ECE6DF;
   border-radius: 8px;
 }
 

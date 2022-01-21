@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="add-card">
+    <h1>ADD A NEW CARD</h1>
       <Card :card="card" />
       <NewCardForm @emit="renderCard" :cards="cards" @send="sendCard"/>
   </div>
@@ -30,5 +31,9 @@ export default {
 </script>
 
 <style>
-
+.add-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 </style>
