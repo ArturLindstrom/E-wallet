@@ -2,7 +2,7 @@
   <div class="add-card">
     <h1>ADD A NEW CARD</h1>
       <Card :card="card" />
-      <NewCardForm @emit="renderCard" :cards="cards" @send="sendCard"/>
+      <NewCardForm @card="renderCard" :cards="cards" @send="sendCard"/>
   </div>
 </template>
 
@@ -14,13 +14,17 @@ export default {
   props:{cards:Array},
   
     data(){return{
-      card: {}
+      card: {
+        cardNumber: "XXXX XXXX XXXX XXXX", 
+          cardHolder: "FIRSTNAME LASTNAME", 
+          expireMonth: "MM", 
+          expireYear: "YY", 
+      }
     }},
   components: {NewCardForm, Card},
-//   components: {NewCardForm},
   methods: {
-    renderCard(event){
-      this.card = event
+    renderCard(payload){
+      this.card = payload
     },
     sendCard(newCard){
       this.$emit('sendMore', newCard)

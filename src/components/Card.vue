@@ -3,7 +3,6 @@
     <div class="wifichip">
       <img class="wifi" v-if="classGenerator == '' || classGenerator == 'bitcoin'" src="../assets/wifi.svg">
       <img class="wifi-white" v-else src="../assets/wifi_white.svg">
-      <!-- <img class="wifi" v-bind:src="this.wifiSrc"> -->
       <div class="chipcontainer">
         <img class="chip" src="../assets/chip.svg">
       </div>
@@ -36,15 +35,13 @@ export default {
       }
     },
     imgSrc() {
-      return require("../assets/" + (this.card.vendor) + ".svg")
+      return require("../assets/" + (this.newCard.vendor) + ".svg")
     },
     classGenerator(){
       return this.newCard.vendor
     }
   },
 
-  method: {
-  },
   data(){return{
 
 

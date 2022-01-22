@@ -3,7 +3,7 @@
     <form @submit.prevent="pushNewCard" @input="cardPreview">
       <div class="num">
         <p>CARD NUMBER</p>
-        <input type="text" maxlength="19" @input="numberSpacer" v-model="newCard.cardNumber" onkeypress="return /[0-9]/i.test(event.key)">
+        <input type="text" maxlength="19" @keyup="numberSpacer" v-model="newCard.cardNumber" placeholder="XXXX XXXX XXXX XXXX" onkeypress="return /[0-9]/i.test(event.key)">
       </div>
       <div class="name-section">
         <p>CARDHOLDER NAME</p>
@@ -63,7 +63,7 @@ export default {
         }},
     methods:{
         cardPreview(){
-            this.$emit('emit', this.newCard)
+            this.$emit('card', this.newCard)
         },
         pushNewCard(){
           if(this.cards.find((vendor) => vendor.vendor == this.newCard.vendor)){
@@ -77,19 +77,18 @@ export default {
             this.$emit('send',{...this.newCard})
           }
         },
-        numberSpacer(){
-          this.keyCounter++
-          if(this.keyCounter==4){
-            this.newCard.cardNumber += " "
-            this.keyCounter = 0
-            this.newCard.cardnumber.trim()
-          }
-        }
+       numberSpacer() {
+
+           if (this.newCard.cardNumber.length == 4 || this.newCard.cardNumber.length == 9 || this.newCard.cardNumber.length == 14)
+          this.newCard.cardNumber +=' ';
+       }
     }
 }
 </script>
 
 <style scoped>
+
+
 
 form{
   display: flex;
@@ -103,7 +102,7 @@ p {
 
 input {
   height: 2rem;
-  width: 100%;
+  width: 21rem;
   padding: .5rem;
   font-size: 1rem;
   border-radius: 8px;
@@ -130,9 +129,28 @@ select {
   border-radius: 8px;
 }
 
+.ccv input{
+  width: 5rem;
+}
+
+.vendor select{
+  width: 21rem;
+}
+
 select, option {
   font-size: 1rem;
 }
+
+button{
+   border-radius: 8px;
+  width: 23rem;
+  padding: 1rem;
+  background: white;
+  border: solid black 1px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
 
 
 </style>
