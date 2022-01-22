@@ -22,14 +22,14 @@ export default {
     view: "HomeView",
     
     cards: [
-      {
-      vendor: "bitcoin", 
-      cardNumber: "1234 5678 9012 3456", 
-      cardHolder: "Kent Aurén", 
-      expireMonth: "3", 
-      expireYear: "23", 
-      CCV: '666'
-      }
+      // {
+      // vendor: "bitcoin", 
+      // cardNumber: "1234 5678 9012 3456", 
+      // cardHolder: "Kent Aurén", 
+      // expireMonth: "3", 
+      // expireYear: "23", 
+      // CCV: '666'
+      // }
       // {
       // vendor: "blockchain", 
       // cardNumber: "1234 5678 9012 3156", 
@@ -64,9 +64,16 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Source+Sans+Pro:wght@400;700&display=swap');
 
 
-
+body{
+  margin: 0 auto;
+  padding: 0;
+  overflow-x: hidden;
+}
 #app{
-  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 
 h1 {
