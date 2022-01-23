@@ -63,7 +63,7 @@ button {
   width: 23rem;
   padding: 1rem;
   background: white;
-  border: solid black 1px;
+  border: solid black 2px;
   font-size: 1.4rem;
   font-weight: 700;
   margin-top: 5rem;
@@ -89,12 +89,10 @@ button :active{
 }
 
 .card-stack div:nth-of-type(2) {
-  /* transform: translateY(-10rem) */
   top: -10rem;
 }
 
 .card-stack div:nth-of-type(3){
-  /* transform: translateY(-20rem) */
   top: -20rem;
 }
 
