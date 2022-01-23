@@ -3,22 +3,22 @@
     <form @submit.prevent="pushNewCard" @input="cardPreview" autocomplete="off">
       <div class="num">
         <p>CARD NUMBER</p>
-        <input type="text" maxlength="19" @keyup="numberSpacer" v-model="newCard.cardNumber" placeholder="XXXX XXXX XXXX XXXX" onkeypress="return /[0-9]/i.test(event.key)">
+        <input required type="text" maxlength="19" @keyup="numberSpacer" v-model="newCard.cardNumber" placeholder="XXXX XXXX XXXX XXXX" onkeypress="return /[0-9]/i.test(event.key)">
       </div>
       <div class="name-section">
         <p>CARDHOLDER NAME</p>
-        <input type="text" maxlength="20" v-model="newCard.cardHolder" onkeypress="return /[a-ö, ' ']/i.test(event.key)" placeholder="FIRSTNAME LASTNAME">
+        <input required type="text" maxlength="20" v-model="newCard.cardHolder" onkeypress="return /[a-ö, ' ']/i.test(event.key)" placeholder="FIRSTNAME LASTNAME">
       </div>
         <div class="expiry">
         <div class="flex">
           <p>VALID THRU</p>
-          <select v-model="newCard.expireMonth">
+          <select required v-model="newCard.expireMonth">
               <option value="" disabled>MM</option>
               <option :value="month" v-for="month in 12" :key="month">
                   {{month}}
               </option>
           </select>
-          <select v-model="newCard.expireYear">
+          <select required v-model="newCard.expireYear">
               <option value="" disabled>YY</option>
               <option :value="year+2021" v-for="year in 10" :key="year">
                   {{year+2021}}
@@ -27,12 +27,12 @@
         </div>
       <div class="ccv">
         <p>CCV</p>
-        <input type="text" class="ccv" maxlength="3" onkeypress="return /[0-9]/i.test(event.key)" v-model="newCard.CCV">
+        <input required type="text" class="ccv" maxlength="3" onkeypress="return /[0-9]/i.test(event.key)" v-model="newCard.CCV">
       </div>
       </div>
       <div class="vendor">
         <p>VENDOR</p>
-        <select v-model="newCard.vendor" placeholder="sadadssd">
+        <select required v-model="newCard.vendor" placeholder="sadadssd">
             <option value="bitcoin">BITCOIN INC</option>
             <option value="blockchain">BLOCK CHAIN INC</option>
             <option value="evil">EVIL CORP</option>
