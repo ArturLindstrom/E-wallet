@@ -5,7 +5,7 @@
       <span>active card</span>
       <Card :card="activeCard"/>
       <span class="remove-active" @click="showModal=true">REMOVE CARD</span>
-      <div v-if="showModal" class="modal-mask">
+      <div v-if="showModal" @click.self="showModal=false" class="modal-mask">
         <div class="modal">
         <span>Do you want to delete card?</span>
         <button @click="removeActive">Yes</button>
@@ -57,6 +57,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 1rem;
 }
 span {
   text-align: center;
@@ -66,8 +67,12 @@ span {
   color: darkgray;
 }
 
+h1{
+  margin: 0;
+}
+
 .active-card {
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
