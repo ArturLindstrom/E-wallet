@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HomeView v-if="view=='HomeView'" :cards="cards" @changeView="view='AddCard'"  />
+    <HomeView v-if="view=='HomeView'" :cards="cards" @changeView="view='AddCard'" @remove="removeCard" />
     <AddCard v-if="view=='AddCard'" :cards="cards" @sendMore="pushNewCard"/>
   </div>
 </template>
@@ -15,6 +15,13 @@ export default {
     pushNewCard(newCard){
       this.cards.push(newCard)
       this.view = "HomeView"
+    },
+    removeCard(removeCard){
+      for(let i = 0; i < this.cards.length; i++){
+        if(removeCard == this.cards[i]) {
+          this.cards.splice(i, 1)
+        }
+      }
     }
     },
 
@@ -22,38 +29,38 @@ export default {
     view: "HomeView",
     
     cards: [
-      // {
-      // vendor: "bitcoin", 
-      // cardNumber: "1234 5678 9012 3456", 
-      // cardHolder: "Kent Aurén", 
-      // expireMonth: "3", 
-      // expireYear: "23", 
-      // CCV: '666'
-      // }
-      // {
-      // vendor: "blockchain", 
-      // cardNumber: "1234 5678 9012 3156", 
-      // cardHolder: "Kent Aurén", 
-      // expireMonth: "3", 
-      // expireYear: "23", 
-      // CCV: '666'
-      // },
-      // {
-      // vendor: "evil", 
-      // cardNumber: "1337 1337 1337 1337", 
-      // cardHolder: "OSCAR ARRHENIUS", 
-      // expireMonth: "13", 
-      // expireYear: "37", 
-      // CCV: '666'
-      // },
-      // {
-      // vendor: "ninja", 
-      // cardNumber: "1338 1337 1337 1337", 
-      // cardHolder: "OSCAR ARRHENIUS", 
-      // expireMonth: "13", 
-      // expireYear: "37", 
-      // CCV: '666'
-      // }
+      {
+      vendor: "bitcoin", 
+      cardNumber: "1234 5678 9012 3456", 
+      cardHolder: "Kent Aurén", 
+      expireMonth: "3", 
+      expireYear: "23", 
+      CCV: '666'
+      },
+      {
+      vendor: "blockchain", 
+      cardNumber: "1234 5678 9012 3156", 
+      cardHolder: "Kent Aurén", 
+      expireMonth: "3", 
+      expireYear: "23", 
+      CCV: '666'
+      },
+      {
+      vendor: "evil", 
+      cardNumber: "1337 1337 1337 1337", 
+      cardHolder: "OSCAR ARRHENIUS", 
+      expireMonth: "13", 
+      expireYear: "37", 
+      CCV: '666'
+      },
+      {
+      vendor: "ninja", 
+      cardNumber: "1338 1337 1337 1337", 
+      cardHolder: "OSCAR ARRHENIUS", 
+      expireMonth: "13", 
+      expireYear: "37", 
+      CCV: '666'
+      }
     ]
   }}
 }

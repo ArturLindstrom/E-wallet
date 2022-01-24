@@ -99,7 +99,6 @@ form{
 
 p {
   margin-bottom: 0.2rem;
-  /* text-align: ; */
 }
 
 .num, .name-section, .expiry, .vendor{
