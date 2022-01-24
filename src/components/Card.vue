@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :class="classGenerator" >
+  <div class="card" :class="classGenerator" @click="$emit('click')" >
     <div class="wifichip">
       <img class="wifi" v-if="classGenerator == '' || classGenerator == 'bitcoin'" src="../assets/wifi.svg">
       <img class="wifi-white" v-else src="../assets/wifi_white.svg">

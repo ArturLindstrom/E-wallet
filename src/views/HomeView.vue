@@ -6,7 +6,7 @@
       <Card :card="activeCard"/>
     </div>
     <div class="card-stack">
-      <Card v-for="card in filterActive" :key="card.cardNumber" @click.native="()=>makeActive(card)" :card="card"/>
+      <Card v-for="card in filterActive" :key="card.cardNumber" @click="()=>makeActive(card)" :card="card"/>
     </div>
     <button @click="$emit('changeView')">ADD A NEW CARD</button>
   </div>
