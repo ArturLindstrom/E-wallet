@@ -8,9 +8,11 @@
       <span class="remove-active" @click="showModal=true">REMOVE CARD</span>
       <div v-if="showModal" @click.self="showModal=false" class="modal-mask">
         <div class="modal">
-        <span>Do you want to delete card?</span>
-        <button @click="removeActive">Yes</button>
-        <button @click="showModal=false">No</button>
+        <span>Remove card?</span>
+        <div class="button-container">
+          <button @click="removeActive">Yes</button>
+          <button @click="showModal=false">No</button>
+        </div>
         </div>
       </div>
     </div>
@@ -87,20 +89,20 @@ h1{
 }
 
 .modal-mask{
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  position: fixed; 
+  z-index: 1; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
 }
 
 .modal {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 10% auto; 
   padding: 4rem;
   border: 1px solid #888;
   width: 30%;
@@ -108,11 +110,23 @@ h1{
   justify-content: center;
   border-radius: 8px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal span{
+  font-size: 1.8rem;
+  color: red;
+}
+
+.button-container{
+  display: flex;
 }
 
 .modal button{
   width: 4rem;
   text-align: center;
+  margin: 1rem;
 }
 
 .add-card {

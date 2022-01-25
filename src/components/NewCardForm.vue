@@ -4,7 +4,7 @@
     <form @submit.prevent="pushNewCard" @input="cardPreview" autocomplete="off">
       <div class="num">
         <p>CARD NUMBER</p>
-        <input required type="text" maxlength="16" v-model="newCard.cardNumber" placeholder="#### #### ####" onkeypress="return /[0-9]/i.test(event.key)">
+        <input-masked required type="text" mask="1111 1111 1111 1111" maxlength="16" :placeholder-char="'#### #### #### ####'.split('')" v-model="newCard.cardNumber" placeholder="#### #### #### ####" ></input-masked>
       </div>
       <div class="name-section">
         <p>CARDHOLDER NAME</p>
@@ -50,8 +50,9 @@
 
 <script>
 import Card from "./Card.vue"
+import InputMasked from '@aymkdn/vue-input-masked'
 export default {
-  components:{Card},
+  components:{Card, InputMasked},
   props: {cards: Array},
     data(){return{
       newCard:
