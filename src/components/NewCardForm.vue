@@ -4,7 +4,7 @@
     <form @submit.prevent="pushNewCard" @input="cardPreview" autocomplete="off">
       <div class="num">
         <p>CARD NUMBER</p>
-        <input-masked required type="text" mask="1111 1111 1111 1111" maxlength="16" :placeholder-char="'#### #### #### ####'.split('')" v-model="newCard.cardNumber" placeholder="#### #### #### ####" ></input-masked>
+        <input-masked required type="text" mask="1111 1111 1111 1111" maxlength="16" :placeholder-char="'XXXX XXXX XXXX XXXX'.split('')" v-model="newCard.cardNumber" placeholder="XXXX XXXX XXXX XXXX" ></input-masked>
       </div>
       <div class="name-section">
         <p>CARDHOLDER NAME</p>
@@ -81,20 +81,13 @@ export default {
             this.errorMessage = ""
             this.$emit('send',{...this.newCard})
           }
-        },
-      //  numberSpacer() {
-
-      //      if (this.newCard.cardNumber.length == 4 || this.newCard.cardNumber.length == 9 || this.newCard.cardNumber.length == 14)
-      //     this.newCard.cardNumber +=' ';
-      //  }
-    },
+        }
+    }
     
 }
 </script>
 
 <style scoped>
-
-
 
 form{
   display: flex;
@@ -133,12 +126,11 @@ input::placeholder {
 
 .expiry select{
   margin: 0 1rem 0 0;
-  /* width: 100%; */
   height: 3rem;
 }
 
 select {
-  height: 2rem;
+  height: 3rem;
   border-radius: 8px;
   size: 2;
   border: solid black 2px;
@@ -172,7 +164,5 @@ button{
 .error{
   color: red;
 }
-
-
 
 </style>

@@ -44,29 +44,29 @@ export default {
         },
         number(){
             if(this.newCard.cardNumber == ""){
-               return "#### #### #### ####"
+               return "XXXX XXXX XXXX XXXX"
             } else{
 
              return this.newCard.cardNumber.replace(/\d{4}(?=.)/g, '$& ')
             }
         }
-  },
-
-  data(){return{
-
-  }}
+  }
 }
 </script>
 
 <style scoped>
 p{
   color: black;
+  text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.15), 0px 1px 0px rgba(0, 0, 0, 0.05), -1px 0px 0px rgba(0, 0, 0, 0.05), 0px -1px 0px rgba(0, 0, 0, 0.15);
+
 }
 
 .card {
   display: grid;
   max-width: 21rem;
-  height: 12rem;
+  width: 90vw;
+  max-height: 13rem;
+  height: calc(90vw*.618);
   aspect-ratio: 3.5/2;
   border-radius: 8px;
   background-color: darkgray;

@@ -8,10 +8,10 @@
       <span class="remove-active" @click="showModal=true">REMOVE CARD</span>
       <div v-if="showModal" @click.self="showModal=false" class="modal-mask">
         <div class="modal">
-        <span>Remove card?</span>
+        <span>Remove active card?</span>
         <div class="button-container">
-          <button @click="removeActive">Yes</button>
-          <button @click="showModal=false">No</button>
+          <button @click="removeActive">YES</button>
+          <button @click="showModal=false">NO</button>
         </div>
         </div>
       </div>
@@ -75,7 +75,6 @@ h1{
 }
 
 .active-card {
-  /* margin-bottom: 2rem; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -102,10 +101,10 @@ h1{
 
 .modal {
   background-color: #fefefe;
-  margin: 10% auto; 
+  margin: 15% auto; 
   padding: 4rem;
-  border: 1px solid #888;
-  width: 30%;
+  border: 2px solid black;
+  width: 15rem;
   display: flex;
   justify-content: center;
   border-radius: 8px;
@@ -115,8 +114,9 @@ h1{
 }
 
 .modal span{
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: red;
+  font-weight: 600;
 }
 
 .button-container{
@@ -127,6 +127,11 @@ h1{
   width: 4rem;
   text-align: center;
   margin: 1rem;
+  background: white;
+  border: solid black 2px;
+   font-size: 1.4rem;
+  font-weight: 700;
+  border-radius: 8px;
 }
 
 .add-card {
@@ -169,8 +174,4 @@ button :active{
 .card-stack div:nth-of-type(3){
   top: -20rem;
 }
-
-
-
-
 </style>
