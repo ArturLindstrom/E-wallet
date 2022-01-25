@@ -1,9 +1,10 @@
 <template>
   <div class="form">
+    <Card :card="newCard" />
     <form @submit.prevent="pushNewCard" @input="cardPreview" autocomplete="off">
       <div class="num">
         <p>CARD NUMBER</p>
-        <input required type="text" maxlength="19" @keyup="numberSpacer" v-model="newCard.cardNumber" placeholder="XXXX XXXX XXXX XXXX" onkeypress="return /[0-9]/i.test(event.key)">
+        <input required type="text" maxlength="16" v-model="newCard.cardNumber" placeholder="#### #### ####" onkeypress="return /[0-9]/i.test(event.key)">
       </div>
       <div class="name-section">
         <p>CARDHOLDER NAME</p>
@@ -48,7 +49,9 @@
 </template>
 
 <script>
+import Card from "./Card.vue"
 export default {
+  components:{Card},
   props: {cards: Array},
     data(){return{
       newCard:
@@ -78,12 +81,13 @@ export default {
             this.$emit('send',{...this.newCard})
           }
         },
-       numberSpacer() {
+      //  numberSpacer() {
 
-           if (this.newCard.cardNumber.length == 4 || this.newCard.cardNumber.length == 9 || this.newCard.cardNumber.length == 14)
-          this.newCard.cardNumber +=' ';
-       }
-    }
+      //      if (this.newCard.cardNumber.length == 4 || this.newCard.cardNumber.length == 9 || this.newCard.cardNumber.length == 14)
+      //     this.newCard.cardNumber +=' ';
+      //  }
+    },
+    
 }
 </script>
 

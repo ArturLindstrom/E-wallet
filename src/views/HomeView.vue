@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>E-WALLET</h1>
+    
     <div class="active-card" v-if="activeCard">
       <span>active card</span>
       <Card :card="activeCard"/>
@@ -13,7 +14,7 @@
         </div>
       </div>
     </div>
-    <div class="card-stack">
+    <div class="card-stack" v-if="filterActive.length > 0">
       <span>YOUR CARDS</span>
       <Card v-for="card in filterActive" :key="card.cardNumber" @click="()=>makeActive(card)" :card="card"/>
     </div>
@@ -106,8 +107,7 @@ h1{
   display: flex;
   justify-content: center;
   border-radius: 8px;
-  z-index: 2;
-
+  display: flex;
 }
 
 .modal button{

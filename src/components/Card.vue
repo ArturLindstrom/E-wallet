@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :class="classGenerator" @click="$emit('click')" >
+  <div class="card" :class="classGenerator" >
     <div class="wifichip">
       <img class="wifi" v-if="classGenerator == '' || classGenerator == 'bitcoin'" src="../assets/wifi.svg">
       <img class="wifi-white" v-else src="../assets/wifi_white.svg">
@@ -8,10 +8,10 @@
       </div>
     </div>
     <img v-if="this.newCard.vendor" v-bind:src="this.imgSrc" class="vendor-img">
-    <p class="card-number">{{newCard.cardNumber}}</p>
+    <p class="card-number">{{number}}</p>
     <div class="card-holder">
       <p card-holder-title>CARDHOLDER NAME</p>
-      <p v-if="this.newCard.cardHolder" class="card-holder-name">{{newCard.cardHolder.toUpperCase()}}</p>
+      <p class="card-holder-name">{{name}}</p>
     </div>
     <div class="valid-date">
       <p>VALID THRU</p>
@@ -27,23 +27,32 @@ export default {
     newCard(){
       return this.card
     },
-    wifiSrc() {
-      if(this.newCard.vendor == "" || this.classGenerator == 'bitcoin'){
-        return require("../assets/wifi.svg")
-        } else {
-        return require("../assets/wifi_white.svg")
-      }
-    },
+    
     imgSrc() {
       return require("../assets/" + (this.newCard.vendor) + ".svg")
     },
     classGenerator(){
       return this.newCard.vendor
-    }
+    },
+      name(){
+            if(this.newCard.cardHolder == ""){
+               return "FIRSTNAME LASTNAME"
+            } else{
+
+              return this.newCard.cardHolder.toUpperCase()
+            }
+        },
+        number(){
+            if(this.newCard.cardNumber == ""){
+               return "#### #### #### ####"
+            } else{
+
+             return this.newCard.cardNumber.replace(/\d{4}(?=.)/g, '$& ')
+            }
+        }
   },
 
   data(){return{
-
 
   }}
 }
