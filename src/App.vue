@@ -36,38 +36,6 @@ export default {
     view: "HomeView",
     
     cards: [
-      // {
-      // vendor: "bitcoin", 
-      // cardNumber: "1234 5678 9012 3456", 
-      // cardHolder: "Kent Aurén", 
-      // expireMonth: "3", 
-      // expireYear: "23", 
-      // CCV: '666'
-      // },
-      // {
-      // vendor: "blockchain", 
-      // cardNumber: "1234 5678 9012 3156", 
-      // cardHolder: "Kent Aurén", 
-      // expireMonth: "3", 
-      // expireYear: "23", 
-      // CCV: '666'
-      // },
-      // {
-      // vendor: "evil", 
-      // cardNumber: "1337 1337 1337 1337", 
-      // cardHolder: "OSCAR ARRHENIUS", 
-      // expireMonth: "13", 
-      // expireYear: "37", 
-      // CCV: '666'
-      // }
-      // {
-      // vendor: "ninja", 
-      // cardNumber: "1338 1337 1337 1337", 
-      // cardHolder: "OSCAR ARRHENIUS", 
-      // expireMonth: "13", 
-      // expireYear: "37", 
-      // CCV: '666'
-      // }
     ]
   }}
 }

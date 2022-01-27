@@ -14,13 +14,13 @@
         <div class="flex">
           <p>VALID THRU</p>
           <select required v-model="newCard.expireMonth">
-              <option value="" disabled>MM</option>
+              <option value="" disabled hidden>MM</option>
               <option :value="month" v-for="month in 12" :key="month">
                   {{month}}
               </option>
           </select>
           <select required v-model="newCard.expireYear">
-              <option value="" disabled>YY</option>
+              <option value="" disabled hidden>YY</option>
               <option :value="year+2021" v-for="year in 10" :key="year">
                   {{year+2021}}
               </option>
@@ -33,7 +33,8 @@
       </div>
       <div class="vendor">
         <p>VENDOR</p>
-        <select required v-model="newCard.vendor" placeholder="sadadssd">
+        <select required v-model="newCard.vendor">
+            <option value="" disabled hidden>--CHOOSE VENDOR--</option>
             <option value="bitcoin">BITCOIN INC</option>
             <option value="blockchain">BLOCK CHAIN INC</option>
             <option value="evil">EVIL CORP</option>

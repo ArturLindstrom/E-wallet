@@ -2,28 +2,19 @@
   <div class="add-card">
     <h1>ADD A NEW CARD</h1>
     <p class="new-card">NEW CARD</p>
-      <!-- <Card :card="card" /> -->
       <NewCardForm @card="renderCard" :cards="cards" @send="sendCard"/>
   </div>
 </template>
 
 <script>
 import NewCardForm from "../components/NewCardForm.vue"
-// import Card from "../components/Card.vue"
 
 export default {
   props:{cards:Array},
   
     data(){return{
-      // card: {
-      //   cardNumber: "XXXX XXXX XXXX XXXX", 
-      //     cardHolder: "FIRSTNAME LASTNAME", 
-      //     expireMonth: "MM", 
-      //     expireYear: "YY", 
-      // }
     }},
   components: {NewCardForm},
-  // components: {NewCardForm, Card},
   methods: {
     renderCard(payload){
       this.card = payload

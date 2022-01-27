@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <h1>E-WALLET</h1>
-    
     <div class="active-card" v-if="activeCard">
       <span>active card</span>
       <Card :card="activeCard"/>
@@ -16,8 +15,8 @@
         </div>
       </div>
     </div>
-    <div class="card-stack" v-if="filterActive.length > 0">
       <span>YOUR CARDS</span>
+    <div class="card-stack" v-if="filterActive.length > 0">
       <Card v-for="card in filterActive" :key="card.cardNumber" @click="()=>makeActive(card)" :card="card"/>
     </div>
     <button class="add-card" @click="$emit('changeView')">ADD A NEW CARD</button>
@@ -151,27 +150,11 @@ button :active{
   
 }
 
-.card-stack div {
-  position: relative;
-}
-
 .card-stack {
-  max-height: 20rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  
+  display: grid;
+  grid-auto-rows: 4rem;
+  margin-bottom: 9rem;
 }
 
-.card-stack div:first-child {
-  margin-top: 0rem;
-  transform: translateY(0rem)
-}
-
-.card-stack div:nth-of-type(2) {
-  top: -10rem;
-}
-
-.card-stack div:nth-of-type(3){
-  top: -20rem;
-}
 </style>
