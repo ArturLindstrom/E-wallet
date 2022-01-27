@@ -11,25 +11,25 @@
         <input required type="text" maxlength="20" v-model="newCard.cardHolder" onkeypress="return /[a-ö, ' ']/i.test(event.key)" placeholder="FIRSTNAME LASTNAME">
       </div>
         <div class="expiry">
-        <div class="flex">
-          <p>VALID THRU</p>
-          <select required v-model="newCard.expireMonth">
-              <option value="" disabled hidden>MM</option>
-              <option :value="month" v-for="month in 12" :key="month">
-                  {{month}}
-              </option>
-          </select>
-          <select required v-model="newCard.expireYear">
-              <option value="" disabled hidden>YY</option>
-              <option :value="year+2021" v-for="year in 10" :key="year">
-                  {{year+2021}}
-              </option>
-          </select>
+          <div class="flex">
+            <p>VALID THRU</p>
+            <select required v-model="newCard.expireMonth">
+                <option value="" disabled hidden>MM</option>
+                <option :value="month" v-for="month in 12" :key="month">
+                    {{month}}
+                </option>
+            </select>
+            <select required v-model="newCard.expireYear">
+                <option value="" disabled hidden>YY</option>
+                <option :value="year+2021" v-for="year in 10" :key="year">
+                    {{year+2021}}
+                </option>
+            </select>
         </div>
-      <div class="ccv">
-        <p>CCV</p>
-        <input required type="text" class="ccv" maxlength="3" onkeypress="return /[0-9]/i.test(event.key)" v-model="newCard.CCV">
-      </div>
+        <div class="ccv">
+          <p>CCV</p>
+          <input required type="text" class="ccv" maxlength="3" onkeypress="return /[0-9]/i.test(event.key)" v-model="newCard.CCV">
+        </div>
       </div>
       <div class="vendor">
         <p>VENDOR</p>
@@ -160,6 +160,7 @@ button{
   border: solid black 1px;
   font-size: 1.4rem;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .error{

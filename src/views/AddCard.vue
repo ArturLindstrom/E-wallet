@@ -1,5 +1,6 @@
 <template>
   <div class="add-card">
+    <span class="back-button" @click="$emit('back')">&larr;</span>
     <h1>ADD A NEW CARD</h1>
     <p class="new-card">NEW CARD</p>
       <NewCardForm @card="renderCard" :cards="cards" @send="sendCard"/>
@@ -36,6 +37,16 @@ export default {
 }
 .new-card{
   margin: 0;
+}
+
+.back-button{
+  align-self: flex-start;
+  justify-self: center;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 2.5rem;
+  position: absolute;
+  
 }
 
 h1{

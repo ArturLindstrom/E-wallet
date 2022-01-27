@@ -54,7 +54,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang=scss>
 p{
   color: black;
   text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.15), 0px 1px 0px rgba(0, 0, 0, 0.05), -1px 0px 0px rgba(0, 0, 0, 0.05), 0px -1px 0px rgba(0, 0, 0, 0.15);
@@ -76,6 +76,10 @@ p{
   "card-holder . . valid-date";
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+    p{
+      color: black;
+    }
 }
 
 
@@ -143,32 +147,34 @@ p{
 
 .bitcoin{
   background: linear-gradient(248.04deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 99.07%), #FFAE34;
+  p{
+    color: black;
+  }
 }
 
 
 .blockchain {
   background: linear-gradient(248.52deg, rgba(0, 0, 0, 0.15) 1.49%, rgba(0, 0, 0, 0) 100%), #8B58F9;
+  p{
+    color: white;
 }
-.blockchain p{
-  color: white;
   
 }
 
 .evil {
   background: linear-gradient(248.3deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0) 100%), #F33355;
+    p{
+    color: white;
 }
-.evil p{
-  color: white;
   
 }
 .ninja {
  background: linear-gradient(248.3deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0) 100%), #222222;
+  p{
+    color: white;
+  }
 }
 
-.ninja p{
-  color: white;
-
-}
 
 
 </style>

@@ -1,16 +1,18 @@
 <template>
   <div id="app">
     <HomeView v-if="view=='HomeView'" :cards="cards" @changeView="view='AddCard'" @remove="removeCard" />
-    <AddCard v-if="view=='AddCard'" :cards="cards" @sendMore="pushNewCard"/>
+    <AddCard v-if="view=='AddCard'" :cards="cards" @sendMore="pushNewCard" @back="view='HomeView'"/>
+    <DarkMode/>
   </div>
 </template>
 
 <script>
 import HomeView from "./views/HomeView.vue";
 import AddCard from "./views/AddCard.vue";
+import DarkMode from "./components/DarkMode.vue"
 
 export default {
-  components: {HomeView, AddCard},
+  components: {HomeView, AddCard, DarkMode},
   beforeMount(){
     if(localStorage.cards){
       this.cards = JSON.parse(localStorage.getItem("cards"))
@@ -45,10 +47,12 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Source+Sans+Pro:wght@400;700&display=swap');
 
+
 body{
   margin: 0 auto;
   padding: 0;
   overflow-x: hidden;
+  /* background: rgb(12, 10, 10); */
 }
 #app{
   display: flex;
@@ -61,7 +65,7 @@ h1 {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-p {
+p, span {
   font-family: 'PT Mono', monospace;
 }
 

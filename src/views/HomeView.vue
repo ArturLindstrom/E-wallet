@@ -26,10 +26,12 @@
 <script>
 import Card from "../components/Card.vue"
 
+
 export default {
   props:{cards: Array},
   components: {Card},
   methods:{
+    
     makeActive(card){
       this.activeCard = card
     },
@@ -131,6 +133,7 @@ h1{
    font-size: 1.4rem;
   font-weight: 700;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .add-card {
@@ -142,6 +145,7 @@ h1{
   font-size: 1.4rem;
   font-weight: 700;
   margin-top: 5rem;
+  cursor: pointer;
 }
 
 button :active{
