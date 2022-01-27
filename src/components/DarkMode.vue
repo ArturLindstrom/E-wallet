@@ -167,7 +167,6 @@ body {
 }
 
 h1 {
-    /* font-weight: 400; */
     transition: color .5s ease;
 }
 

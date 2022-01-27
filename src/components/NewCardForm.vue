@@ -143,7 +143,8 @@ select {
 }
 
 .vendor select{
-  width: 100%
+  width: 100%;
+  /* margin-bottom: 5rem; */
 }
 
 select, option {
