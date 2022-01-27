@@ -1,8 +1,8 @@
 <template>
   <div id="app">
+    <DarkMode class="darkmode"/>
     <HomeView v-if="view=='HomeView'" :cards="cards" @changeView="view='AddCard'" @remove="removeCard" />
     <AddCard v-if="view=='AddCard'" :cards="cards" @sendMore="pushNewCard" @back="view='HomeView'"/>
-    <DarkMode/>
   </div>
 </template>
 
@@ -59,6 +59,13 @@ body{
   flex-direction: column;
   align-items: center;
 
+}
+.darkmode {
+  position: fixed;
+  display: sticky;
+  transform: rotate(90deg);
+  margin: 1rem auto;
+  right: 1rem;
 }
 
 h1 {

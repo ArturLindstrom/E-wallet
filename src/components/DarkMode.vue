@@ -64,7 +64,10 @@ body {
 body {
     &.dark-mode {
         background-color: lighten($dark, 5%);
-        
+            .add-card-button{
+              color: white;
+              background: black;
+            }
             h1, span, p {
                 color: #fff;
             }

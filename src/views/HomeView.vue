@@ -19,7 +19,7 @@
     <div class="card-stack" v-if="filterActive.length > 0">
       <Card v-for="card in filterActive" :key="card.cardNumber" @click="()=>makeActive(card)" :card="card"/>
     </div>
-    <button class="add-card" @click="$emit('changeView')">ADD A NEW CARD</button>
+    <button class="add-card-button" @click="$emit('changeView')">ADD A NEW CARD</button>
   </div>
 </template>
 
@@ -136,7 +136,7 @@ h1{
   cursor: pointer;
 }
 
-.add-card {
+.add-card-button {
   border-radius: 8px;
   width: 23rem;
   padding: 1rem;
