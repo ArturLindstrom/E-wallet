@@ -1,2 +1,2 @@
-School Vue project
+School Vue Project
 
